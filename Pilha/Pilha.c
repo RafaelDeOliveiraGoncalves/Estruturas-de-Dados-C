@@ -30,7 +30,7 @@ int cheia(Pilha *p){
     return (p->topo == p->cap);
 }
 
-void push(Pilha *p, int k){
+void empilha(Pilha *p, int k){
     if(cheia(p)){
         fprintf(stderr, "Pilha está cheia.\n");
         exit(EXIT_FAILURE);
@@ -39,7 +39,7 @@ void push(Pilha *p, int k){
     p->topo++;
 }
 
-int pop(Pilha *p){
+int desempilha(Pilha *p){
     if(vazia(p)){
         fprintf(stderr, "Pilha está vazia\n");
         exit(EXIT_FAILURE);

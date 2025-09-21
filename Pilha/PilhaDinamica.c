@@ -21,12 +21,12 @@ int vazia(PilhaDinamica *p){
     return(p->topo == -1);
 }
 
-void push(PilhaDinamica *p, int k){
+void empilha(PilhaDinamica *p, int k){
     insere(&p->array, k);
     p->topo++;
 }
 
-int pop(PilhaDinamica *p){
+int desempilha(PilhaDinamica *p){
     if(vazia(p)){
         fprintf(stderr, "Pilha está vazia.\n");
         exit(EXIT_FAILURE);
