@@ -13,10 +13,10 @@ No* criarNo(int chave){
             fprintf(stderr, "Erro na alocação.\n");
             exit(1);
         }
-        no->chave = chave;
-        no->le = NULL;
-        no->ld = NULL;
-        return no;
+    no->chave = chave;
+    no->le = NULL;
+    no->ld = NULL;
+    return no;
 }
 
 typedef struct{
@@ -105,7 +105,6 @@ void posOrdem(No *raiz){
         printf("%d ",raiz->chave);
     }
 }
-
 
 int altura(No *raiz){
     if(raiz == NULL) return -1;
