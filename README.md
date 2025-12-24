@@ -4,24 +4,24 @@ Este repositório contém implementações robustas e modulares de diversas estr
 
 ## Estruturas Implementadas
 
-Lineares:
+1.Lineares:
 
-    * Array Dinâmico:
-        Vetor com redimensionamento automático de capacidade.
+- Array Dinâmico:
+  Vetor com redimensionamento automático de capacidade.
 
-    *Deque Dinâmico:
-        Fila de duas extremidades com buffer circular e redimensionamento.
+- Deque Dinâmico:
+  Fila de duas extremidades com buffer circular e redimensionamento.
 
-    *Filas (Queue):
-        Implementações em Deque (circular), encadeada e com prioridade (Heap).
+- Filas (Queue):
+  Implementações em Deque (circular), encadeada e com prioridade (Heap).
 
-    *Pilhas (Stack):
-        Versões dinâmicas e encadeadas.
+- Pilhas (Stack):
+  Versões dinâmicas e encadeadas.
 
-    *Lista Encadeada:
-        Implementação dinâmica de lista com nós.
+- Lista Encadeada:
+  Implementação dinâmica de lista com nós.
 
-Não Lineares:
+  2.Não Lineares:
 
-    *Árvores:
-        Árvore Binária de Busca (BST) e Árvore AVL auto-balanceada.
+- Árvores:
+  Árvore Binária de Busca (BST) e Árvore AVL auto-balanceada.
