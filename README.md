@@ -4,7 +4,7 @@ Este repositório contém implementações robustas e modulares de diversas estr
 
 ## Estruturas Implementadas
 
-### 1.Lineares:
+### 1. Lineares:
 
 - Array Dinâmico: Vetor com redimensionamento automático de capacidade.
 
@@ -16,6 +16,6 @@ Este repositório contém implementações robustas e modulares de diversas estr
 
 - Lista Encadeada: Implementação dinâmica de lista com nós.
 
-### 2.Não Lineares:
+### 2. Não Lineares:
 
 - Árvores: Árvore Binária de Busca (BST) e Árvore AVL auto-balanceada.
