@@ -17,8 +17,6 @@ void inicializa(Pilha *p, int capacidade){
 }
 
 void esvazia(Pilha *p){
-    free(p->v);
-    p->v = NULL;
     p->topo = 0;
 }
 

@@ -16,11 +16,11 @@ void inicializa(arrayDin *a){
     a->tam = 0;
 }
 
-int cheio(arrayDin *a){
+static int cheio(arrayDin *a){
     return (a->tam == a->cap);
 }
 
-void dobra(arrayDin *a){
+static void dobra(arrayDin *a){
     int *aux = (int *) realloc(a->v, (a->cap*2)*sizeof(int));
     if(!aux){
         fprintf(stderr, "Falha na realocação de memória.\n");
@@ -30,21 +30,15 @@ void dobra(arrayDin *a){
     a->cap*=2;
 }
 
-void divide(arrayDin *a){
-    if(a->cap>1){
-        int novaCap = a->cap/2;
-        if(novaCap<1){
-            novaCap = 1;
-
-        }
-        int *aux = (int *)realloc(a->v, novaCap*sizeof(int));
-        if(!aux){
+static void divide(arrayDin *a){
+    int *aux = (int *)realloc(a->v, (a->cap/2)*sizeof(int));
+    if(aux == NULL){
         fprintf(stderr, "Falha na realocação de memória.\n");
+        free(a->v);
         exit(EXIT_FAILURE);
-        }
-        a->v = aux;
-        a->cap = novaCap;
     }
+        a->v = aux;
+        a->cap/=2;
 }
 
 void insere(arrayDin *a, int k){
@@ -55,12 +49,12 @@ void insere(arrayDin *a, int k){
     a->tam++;
 }
 
-void deleta(arrayDin *a){
+void remove(arrayDin *a){
     if(a->tam == 0){
         return;
     }
     a->tam--;
-    if(a->tam<=a->cap/4 && a->cap>1){
+    if(a->tam <= a->cap/4){
         divide(a);
     }
 }

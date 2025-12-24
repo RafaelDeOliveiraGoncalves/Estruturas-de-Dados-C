@@ -16,7 +16,11 @@ void pilha_inicializa(PilhaEncadeada *p){
 }
 
 void esvazia(PilhaEncadeada *p){
-    libera(p->lista);
+    while (!vazia(p)) {
+        No *aux = p->lista->cabeca;
+        p->lista->cabeca = aux->proximo;
+        free(aux);
+    }
 }
 
 int vazia(PilhaEncadeada *p){
@@ -53,10 +57,4 @@ void imprime_pilha(PilhaEncadeada *p){
         printf("%d\n",no->chave);
         no = no->proximo;
     }
-}
-
-void liberar_pilha(PilhaEncadeada *p){
-    esvazia(p);
-    free(p->lista);
-    p->lista = NULL;
 }

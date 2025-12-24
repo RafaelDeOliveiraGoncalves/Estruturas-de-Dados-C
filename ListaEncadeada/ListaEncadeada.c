@@ -84,7 +84,7 @@ void insereOrdenado(ListaEncadeada *ld, int k){
 void deletar(ListaEncadeada *ld, int k){
     No *atual, *ant;
     buscaInsercao(ld,k,&atual,&ant);
-    if(atual==NULL){
+    if(atual==NULL || atual->chave != k){
         return;
     }
     if(ant == NULL){

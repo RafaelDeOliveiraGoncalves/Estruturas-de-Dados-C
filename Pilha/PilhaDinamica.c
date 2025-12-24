@@ -4,26 +4,22 @@
 
 typedef struct{
     arrayDin array;
-    int topo;
 }PilhaDinamica;
 
 void pilha_inicializa(PilhaDinamica *p){
     inicializa(&p->array);
-    p->topo = -1;
 }
 
 void esvazia(PilhaDinamica *p){
-    libera(&p->array);
-    p->topo = -1;
+    p->array.tam = 0;
 }
 
 int vazia(PilhaDinamica *p){
-    return(p->topo == -1);
+    return(p->array.tam == 0);
 }
 
 void empilha(PilhaDinamica *p, int k){
     insere(&p->array, k);
-    p->topo++;
 }
 
 int desempilha(PilhaDinamica *p){
@@ -31,9 +27,8 @@ int desempilha(PilhaDinamica *p){
         fprintf(stderr, "Pilha está vazia.\n");
         exit(EXIT_FAILURE);
     }
-    int k = p->array.v[p->topo];
-    deleta(&p->array);
-    p->topo--;
+    int k = p->array.v[p->array.tam - 1];
+    remove(&p->array);
     return k;
 }
 
@@ -42,5 +37,20 @@ int topo(PilhaDinamica *p){
         fprintf(stderr, "Pilha está vazia.\n");
         exit(EXIT_FAILURE);
     }
-    return p->array.v[p->topo];
+    return p->array.v[p->array.tam - 1];
+}
+
+void libera_pilha(PilhaDinamica *p) {
+    libera(&p->array);
+}
+
+void imprime_pilha(PilhaDinamica *p){
+    if(vazia(p)){
+        printf("Pilha Vazia\n");
+        return;
+    }
+    printf("Topo\n");
+    for(int i = p->array.tam - 1; i>=0; i--){
+        printf("%d\n",p->array.v[i]);
+    }
 }

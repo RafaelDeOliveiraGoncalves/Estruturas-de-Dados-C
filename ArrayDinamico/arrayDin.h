@@ -8,7 +8,7 @@ typedef struct{
 
 void inicializa(arrayDin *a);
 void insere(arrayDin *a, int k);
-void deleta(arrayDin *a);
+void remove(arrayDin *a);
 void imprime(arrayDin *a);
 void libera(arrayDin *a);
 
